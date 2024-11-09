@@ -226,7 +226,6 @@ p2<-ggplot(data=meta8, aes(x=maincelltype,y=Mean,fill=tumorsite))+geom_bar(stat=
 p<-ggplot()+geom_tile(data=meta9_2,aes(celltype,tumorsite,fill=Enrichment),colour="white",size=1)+scale_fill_gradientn(colours = gplots::bluered(128),limit=c(-50,50),breaks=c(-50,0,50),labels=c("-50","0","50"),name="Enrichment \nMetastasis vs Primary")+geom_point(data=meta8,aes(celltype,tumorsite,size=Mean),shape=1)+scale_size_area(breaks=c(0.05,0.1,0.2,0.3,0.4,0.5,0.6),labels=c(0.05,0.1,0.2,0.3,0.4,0.5,">0.6"),name="among\nall meta cells")+
   labs(x="",y="")+scale_x_discrete(position = "top")+theme_bw()+theme(panel.grid.major = element_blank(),axis.text.x = element_text(angle = 90),legend.position = "bottom",legend.direction = "vertical",legend.title = element_text(angle=90),legend.title.align = 0.5,legend.box.just="left")
 
-save(metadata,meta9_2,meta8,d,p,file="D:/PROJECT/pm/3/新建文件夹/celltype.RData")
 ```
 ```{r}
 meta5<-tidyr::spread(meta3,celltype,proportion)
