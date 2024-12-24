@@ -161,7 +161,7 @@ sceasy::convertFormat(filnoep, from="seurat", to="anndata", outFile='./filnoep.h
 library(Seurat)
 library(SeuratWrappers)
 
-load("D:/PROJECT/pm/2/2-fastmnn/ep/ep.RData")
+load("../ep.RData")
 normalep<-subset(ep,subset = malignant=="normal")
 ```
 
@@ -178,10 +178,10 @@ table(ep$tumorsite)
 
 Idents(ep)<-"tumorsite"
 eptumorsitemark<-FindAllMarkers(ep,only.pos = T,test.use = "MAST")
-write.table(eptumorsitemark, file=paste("D:/PROJECT/pm/2/2-fastmnn/ep/eptumorsitemark.csv", sep="/t"))
+write.table(eptumorsitemark, file=paste("../eptumorsitemark.csv", sep="/t"))
 Idents(ep)<-"malignant"
 eptumormark<-FindAllMarkers(ep,only.pos = T,test.use = "MAST")
-write.table(eptumormark, file=paste("D:/PROJECT/pm/2/2-fastmnn/ep/eptumormark.csv", sep="/t"))
+write.table(eptumormark, file=paste("../eptumormark.csv", sep="/t"))
 
 ```
 
