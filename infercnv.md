@@ -45,7 +45,7 @@ infercnv_obj = CreateInfercnvObject(raw_counts_matrix=expFile,
                                     ref_group_names= c("Immune","Stromal"))
 infercnv_obj2 = infercnv::run(infercnv_obj,
                               cutoff=0.1,
-                              out_dir=  '/Bailab11/PROJECT/xyw/glioma/singlecell/infercnv/inferCNV_crc10' ,
+                              out_dir=  './inferCNV_crc10' ,
                               cluster_by_groups=TRUE,analysis_mode="subclusters",output_format="pdf",
                               denoise=TRUE, HMM = TRUE,num_threads=4,tumor_subcluster_partition_method ="random_trees")
 
